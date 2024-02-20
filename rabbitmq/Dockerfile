@@ -1,0 +1,3 @@
+FROM rabbitmq:3.12.13-alpine
+ENV RABBITMQ_DEFAULT_USER=Roboshop \
+    RABBITMQ_DEFAULT_PASS=roboshop123
