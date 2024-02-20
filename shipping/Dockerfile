@@ -1,8 +1,8 @@
-FROM maven:alpine
+FROM maven AS build
 WORKDIR /opt/shipping
-COPY pom.xml .
+COPY pom.xml /opt/shipping/
 RUN mvn dependency:resolve
-COPY src .
+COPY src /opt/shipping/src/
 RUN mvn package
 FROM openjdk:8-jre-alpine3.9
 EXPOSE 8080

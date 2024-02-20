@@ -6,5 +6,6 @@ ENV AMQP_USER=roboshop \
 COPY *.py .
 COPY payment.ini .
 COPY requirements.txt .
-RUN pip3.6 install -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+#RUN pip3.6 install -r requirements.txt
 CMD ["uwsgi", "--ini", "payment.ini"]
